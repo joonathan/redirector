@@ -1,4 +1,4 @@
-package main // import "Redirector"
+package main // import "redirector"
 
 import (
 	"log"
@@ -14,7 +14,7 @@ func redirect(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", redirect)
 
-	log.Printf("Bringing up Redirector service on PORT: %s", os.Getenv("PORT"))
+	log.Printf("Bringing up redirector service on PORT: %s", os.Getenv("PORT"))
 
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 	if err != nil {
